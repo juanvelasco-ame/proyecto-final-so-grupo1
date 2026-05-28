@@ -1,0 +1,12 @@
+
+services:
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "8080:80"
+
+  pythonapp:
+    build: ./app
+    ports:
+      - "5000:5000"
