@@ -1,19 +1,89 @@
-<h1>Proyecto Final Sistemas Operativos</h1>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Docker</title>
 
-<h2>Home</h2>
-<p>Bienvenido al proyecto final del Grupo 1.</p>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
 
-<h2>Equipo</h2>
-<p>Juan Jose Velasco
-   Santiago Gonzaliaz
-   Daniela Baca
-   Fabian Diaz</p>
+      body {
+        background-color: #0f172a;
+        color: #f1f5f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-<h2>Componentes</h2>
-<ul>
-     <li>Ubuntu Desktop</li>
-     <li>Debian Consola</li>
-     <li>Docker</li>
-     <li>Nginx</li>
-     <li>Python Flask</li>
-</ul>
+      .container {
+        background: #1e293b;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        border: 1px solid #334155;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #38bdf8;
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin: 10px 0;
+        color: #cbd5e1;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: #22c55e;
+        color: white;
+        font-weight: bold;
+      }
+      .team-list {
+        list-style: none;
+        margin: 15px 0;
+        color: #cbd5e1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Frontend funcionando con Docker</h1>
+
+      <p>Este es el servidor Nginx dentro de un contenedor.</p>
+
+      <div>
+        <h2>Equipo</h2>
+        <ul class="team-list">
+          <li>Juan Jose Velasco</li>
+          <li>Santiago Gonzaliaz</li>
+          <li>Daniela Baca</li>
+          <li>Fabian Diaz</li>
+          <li>Juan Pablo Vargas</li>
+        </ul>
+      </div>
+
+      <p>Bienvenido al protyecto del Grupo: <strong>1</strong></p>
+
+      <div class="badge">
+        Docker + Nginx + Debian + Debian Consola + Ubuntun Desktop
+      </div>
+    </div>
+  </body>
+</html>
