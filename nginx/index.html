@@ -24,6 +24,8 @@
         overflow: hidden;
       }
 
+      
+
       .container {
         background: #1e293b;
         padding: 40px;
@@ -74,6 +76,13 @@
   position: relative;
   z-index: 1;
 }
+
+#fecha {
+  margin-top: 10px;
+  color: #38bdf8;
+  font-weight: bold;
+  font-size: 1rem;
+}
       
     </style>
   </head>
@@ -100,6 +109,7 @@
 
       <p>Bienvenido al proyecto del Grupo: <strong>1</strong></p>
       <p>Docente: Jose Alexander Castañeda</p>
+      <p id="fecha"></p>
 
       <hr style="margin:20px 0; border:1px solid #334155;">
 
@@ -148,6 +158,26 @@ particlesJS("particles-js", {
     }
   }
 });
+</script>
+
+<script>
+function actualizarFecha() {
+  const ahora = new Date();
+
+  const fecha = ahora.toLocaleDateString("es-CO", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
+
+  const hora = ahora.toLocaleTimeString("es-CO");
+
+  document.getElementById("fecha").innerHTML =
+    "📅 " + fecha + " | ⏰ " + hora;
+}
+
+setInterval(actualizarFecha, 1000);
+actualizarFecha();
 </script>
   </body>
 </html>
