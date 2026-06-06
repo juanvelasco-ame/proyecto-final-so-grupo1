@@ -1,0 +1,49 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVBAR FIJO - COMPARTIDO POR TODAS LAS PÁGINAS */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0f172a;
+    border-bottom: 2px solid #38bdf8;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-list li a {
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-list li a:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+/* Clase para dar espacio debajo del navbar fijo */
+.page-content {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+

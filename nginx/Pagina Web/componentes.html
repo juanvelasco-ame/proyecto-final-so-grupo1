@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Infraestructura Tecnológica</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link href="./css/global.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        
+        <!-- NAVEGACIÓN -->
+     <div class="navbar" id="nav">
+      <ul class="nav-list" id="nav-list">
+        <li class="nav-item"><a href="index.html">Inicio </a></li>
+        <li class="nav-item"><a href="Equipo.html">Equipo</a></li>
+        <li class="nav-item"><a href="componentes.html">Documentación</a></li>
+      </ul>
+    </div>
+    <header>
+            <h1>📡 Proyecto Infraestructura Tecnológica</h1>
+            <p>Virtualización + Docker + Kubernetes</p>
+        </header>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN HOME                               -->
+        <!-- ========================================== -->
+        <div class=" componente">
+            <h2>🎯 Objetivo del Proyecto</h2>
+            <p>Construir y documentar una infraestructura tecnológica básica que integre máquinas virtuales Linux, contenedores Docker con servicios esenciales en comunicación, y orquestación con Kubernetes Minikube.</p>
+
+            <h3>✅ Tecnologías utilizadas</h3>
+            <ul>
+                <li><strong>VirtualBox</strong> - Ubuntu 24.04 LTS / Debian 13.5</li>
+                <li><strong>Docker Engine</strong> - Docker Compose</li>
+                <li><strong>Kubernetes</strong> - Minikube</li>
+                <li><strong>Nginx</strong> + <strong>Python HTTP Server</strong></li>
+            </ul>
+
+            <h3>📊 Valoración</h3>
+            <ul>
+                <li>Componente 1: Virtualización (30%)</li>
+                <li>Componente 2: Contenedores Docker (30%)</li>
+                <li>Componente 3: Orquestación Kubernetes (20%)</li>
+                <li>Componente 4: Documentación (10%)</li>
+            </ul>
+        </div>
+
+
+            <!-- ========================================== -->
+            <!-- COMPONENTE 1: VIRTUALIZACIÓN               -->
+            <!-- ========================================== -->
+            <div class="componente">
+                <h3>💻 Componente 1: Virtualización con Linux</h3>
+                <p><strong>Valoración:</strong> 30% | <strong>Estado:</strong> ✅ Completado</p>
+
+                <h4>📋 Actividades realizadas</h4>
+                <ul>
+                    <li>Instalación de 2 máquinas virtuales con VirtualBox</li>
+                    <li><strong>VM1:</strong> Ubuntu 24.04 LTS (entorno gráfico)</li>
+                    <li><strong>VM2:</strong> Debian 13.5 (solo consola)</li>
+                    <li>Particionamiento manual: 3 particiones (/, swap, /home) en ambas VMs</li>
+                    <li>Configuración de red interna (modo Red Interna - intnet)</li>
+                    <li>Configuración y verificación de acceso SSH desde VM1 a VM2</li>
+                </ul>
+
+                <h4>🔧 Comandos principales</h4>
+                <pre><code># Asignar IP estática en Ubuntu
+sudo ip addr add 192.168.100.10/24 dev enp0s3
+
+# Asignar IP estática en Debian
+sudo ip addr add 192.168.100.20/24 dev enp0s3
+
+# Verificar IPs
+ip a | grep 192.168.100
+
+# Probar conectividad (ping)
+ping 192.168.100.20
+
+# Conexión SSH desde Ubuntu hacia Debian
+ssh debian@192.168.100.20</code></pre>
+
+                <h4>📸 Evidencias</h4>
+
+                <div class="captura">
+                    <h4>IP de Ubuntu (VM1)</h4>
+                    <img src="imagenes/01-ip-ubuntu.png" alt="IP de Ubuntu">
+                    <p>Ubuntu con IP 192.168.100.10 en la interfaz enp0s3</p>
+                </div>
+
+                <div class="captura">
+                    <h4>IP de Debian (VM2)</h4>
+                    <img src="imagenes/02-ip-debian.png" alt="IP de Debian">
+                    <p>Debian con IP 192.168.100.20 en la interfaz enp0s3</p>
+                </div>
+
+                <div class="captura">
+                    <h4>Prueba de conectividad (ping)</h4>
+                    <img src="imagenes/03-ping.png" alt="Ping exitoso">
+                    <p>Respuesta exitosa desde Debian (64 bytes from 192.168.100.20)</p>
+                </div>
+
+                <div class="captura">
+                    <h4>Conexión SSH funcionando</h4>
+                    <img src="imagenes/04-ssh.png" alt="SSH funcionando">
+                    <p>Terminal de Ubuntu conectada a Debian (prompt cambió a debian@debian:~$)</p>
+                </div>
+
+                <h4>📊 Resumen de configuración de red</h4>
+                <table>
+                    <thead>
+                        <tr><th>VM</th><th>Interfaz</th><th>IP Asignada</th><th>Modo VirtualBox</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ubuntu 24.04</td><td>enp0s3</td><td>192.168.100.10</td><td>Red Interna (intnet)</td></tr>
+                        <tr><td>Debian 13.5</td><td>enp0s3</td><td>192.168.100.20</td><td>Red Interna (intnet)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- COMPONENTE 2: DOCKER                       -->
+            <!-- ========================================== -->
+            <div class="componente">
+                <h3>🐳 Componente 2: Contenedores Docker</h3>
+                <p><strong>Valoración:</strong> 30% | <strong>Estado:</strong> ✅ Completado</p>
+
+                <h4>📋 Actividades realizadas</h4>
+                <ul>
+                    <li>Instalación de Docker Engine en Ubuntu 24.04</li>
+                    <li>Creación de Dockerfiles propios basados en ubuntu:24.04</li>
+                    <li><strong>Frontend:</strong> Servidor web Nginx con archivos HTML estáticos</li>
+                    <li><strong>Backend:</strong> Servidor HTTP simple en Python (puerto 5000)</li>
+                    <li>Orquestación con docker-compose.yml</li>
+                    <li>Configuración de volúmenes persistentes para archivos HTML</li>
+                </ul>
+
+                <h4>📁 Estructura del proyecto</h4>
+                <pre><code>proyecto-docker/
+├── frontend/
+│   ├── Dockerfile
+│   └── index.html
+├── backend/
+│   └── Dockerfile
+└── docker-compose.yml</code></pre>
+
+                <h4>📝 Archivos de configuración</h4>
+
+                <div class="captura">
+                    <h4>docker-compose.yml</h4>
+                    <img src="imagenes/04-docker-compose.yml.png" alt="docker-compose.yml">
+                </div>
+
+                <div class="captura">
+                    <h4>frontend/Dockerfile</h4>
+                    <img src="imagenes/05-frontend-dockerfile.png" alt="Frontend Dockerfile">
+                </div>
+
+                <div class="captura">
+                    <h4>backend/Dockerfile</h4>
+                    <img src="imagenes/06-backend-dockerfile.png" alt="Backend Dockerfile">
+                </div>
+
+                <h4>🔧 Comandos principales</h4>
+                <pre><code># Construir y levantar los contenedores
+cd ~/proyecto-docker
+docker compose up -d
+
+# Verificar contenedores activos
+docker ps
+
+# Acceder al frontend (Nginx)
+http://localhost:8080
+
+# Acceder al backend (Python)
+http://localhost:5000
+
+# Detener contenedores
+docker compose down</code></pre>
+
+                <h4>📸 Evidencias de funcionamiento</h4>
+
+                <div class="captura">
+                    <h4>Contenedores activos (docker ps)</h4>
+                    <img src="imagenes/01-docker-ps.png" alt="docker ps">
+                    <p>Contenedores frontend y backend en estado "Up"</p>
+                </div>
+
+                <div class="captura">
+                    <h4>Frontend - Servidor Nginx</h4>
+                    <img src="imagenes/02-frontend-localhost-8080.png" alt="Frontend funcionando">
+                    <p>Acceso a http://localhost:8080 desde el navegador - Página HTML visible</p>
+                </div>
+
+                <div class="captura">
+                    <h4>Backend - Servidor Python</h4>
+                    <img src="imagenes/03-backend-localhost-5000.png" alt="Backend funcionando">
+                    <p>Acceso a http://localhost:5000 desde el navegador - Mensaje del backend</p>
+                </div>
+
+                <h4>📊 Resumen de servicios Docker</h4>
+                <table>
+                    <thead>
+                        <tr><th>Servicio</th><th>Imagen base</th><th>Puerto Host</th><th>Puerto Contenedor</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Frontend (Nginx)</td><td>ubuntu:24.04</td><td>8080</td><td>80</td></tr>
+                        <tr><td>Backend (Python)</td><td>ubuntu:24.04</td><td>5000</td><td>5000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>📡 Proyecto Integración Tecnológica | Virtualización + Docker + Kubernetes</p>
+            <p>📅 Entrega Parcial - [Fecha de entrega]</p>
+            <p>🎓 [Nombre de la Institución] - [Curso]</p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT PARA NAVEGACIÓN -->
+    <script>
+        function mostrarSeccion(id) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.seccion').forEach(function(seccion) {
+                seccion.classList.remove('activa');
+            });
+            // Mostrar la sección seleccionada
+            document.getElementById(id).classList.add('activa');
+        }
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>

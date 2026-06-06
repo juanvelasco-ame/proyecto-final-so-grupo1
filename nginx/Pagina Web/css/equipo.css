@@ -1,0 +1,70 @@
+/* Estilo claro para la página de equipo */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+}
+
+/* .main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+} */
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.integrante {
+    background: #ecf0f1;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.integrante:hover {
+    transform: translateX(5px);
+}
+
+.integrante h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.integrante p {
+    margin: 8px 0;
+    color: #34495e;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #2980b9;
+}
+
+hr {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+}
+
+.content{
+    max-width: 800px;
+    margin: -45% auto;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+

@@ -3,28 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link href = "style.css" rel = "stylesheet" type = "text/css">
+    
+      <link href="./css/global.css" rel="stylesheet" type="text/css">
+      <link href="./css/home.css" rel="stylesheet" type="text/css">
+      
     <title>Proyecto Docker</title>
 
   </head>
 
   <body>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Equipo.html">Equipo</a></li>
+        <li><a href="componentes.html">Componentes</a></li>
+      </ul>
+    </nav>
 
     <div id="particles-js"></div>
 
     <div class="container">
       <h1>Frontend funcionando con Docker</h1>
 
-      <p>Este es el servidor Nginx dentro de un contenedor.</p>
+      <p class="lead"> <strong>Objetivo:</strong> Construir y documentar una infraestrucuta tecnologica
+         basica que integre maquinas virtuales linux, contenedores dockler 
+         con serviciones esenciales en comunicacion y orquestacion 
+         con kubernetes Minikube.</p>
 
       <div>
-        <h2>Equipo</h2>
+        <h2>Tecnologias utilizadas</h2>
         <ul class="team-list">
-          <li>Juan Jose Velasco</li>
-          <li>Santiago Gonzaliaz</li>
-          <li>Daniela Baca</li>
-          <li>Fabian Diaz</li>
-          <li>Juan Pablo Vargas</li>
+          <li>Docker Engine + Docker Compose</li>
+          <li>Virtuabox - Ubuntu 24.04 / Debian 13.5</li>
+          <li>Kubernestes Minikube</li>
+          <li>Nginx + Python HTTP Server</li>
+
         </ul>
       </div>
 
@@ -33,12 +46,9 @@
       <p id="fecha"></p>
 
       <hr style="margin:20px 0; border:1px solid #334155;">
-
-      <div class="badge">
-        Docker + Nginx + Debian + Debian Consola + Ubuntun Desktop
-      </div>
+        <p>Entregas: <strong>Parcial (Virtualización + Docker) | Final (Kubernetes + Documentacion)</strong></p>
     </div>
      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-      <script src="script.js"></script>
+      <script src="./script.js"></script>
   </body>
 </html>

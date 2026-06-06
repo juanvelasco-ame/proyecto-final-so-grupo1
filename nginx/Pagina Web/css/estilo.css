@@ -1,0 +1,423 @@
+/* ============================================ */
+/* ESTILOS PRINCIPALES PARA EL SITIO WEB       */
+/* Proyecto: Virtualización + Docker + K8s     */
+/* ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, rgb(3, 49, 95) 25%, #591392 100%);
+
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ============================================ */
+/* HEADER Y NAVEGACIÓN                          */
+/* ============================================ */
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+/* Barra de navegación */
+nav {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: #3498db;
+    color: white;
+}
+
+/* ============================================ */
+/* COMPONENTES Y SECCIONES                      */
+/* ============================================ */
+
+.componente {
+    background: white;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.componente h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.componente h3 {
+    color: #3498db;
+    margin: 25px 0 15px 0;
+    font-size: 1.5em;
+}
+
+.componente h4 {
+    color: #2c3e50;
+    margin: 15px 0 10px 0;
+    font-size: 1.2em;
+}
+
+/* Tarjeta de integrantes */
+.tarjeta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    margin: 8px 0;
+}
+
+.tarjeta .rol {
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* ============================================ */
+/* CÓDIGO Y COMANDOS                            */
+/* ============================================ */
+
+pre {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    margin: 15px 0;
+}
+
+code {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.comando {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+/* ============================================ */
+/* CAPTURAS E IMÁGENES                          */
+/* ============================================ */
+
+.captura {
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+}
+
+.captura:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.captura h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.captura img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.captura p {
+    margin-top: 10px;
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+/* ============================================ */
+/* TABLAS                                       */
+/* ============================================ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+/* ============================================ */
+/* LISTAS                                       */
+/* ============================================ */
+
+ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* ============================================ */
+/* BOTONES                                      */
+/* ============================================ */
+
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 10px 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+.btn-volver {
+    background: #95a5a6;
+}
+
+.btn-volver:hover {
+    background: #7f8c8d;
+}
+
+/* ============================================ */
+/* FOOTER                                       */
+/* ============================================ */
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ============================================ */
+/* RESPONSIVE (MÓVILES)                         */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 12px;
+    }
+    
+    .componente {
+        padding: 15px;
+    }
+    
+    .componente h2 {
+        font-size: 1.5em;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 6px;
+    }
+}
+
+/* ============================================ */
+/* ANIMACIONES                                  */
+/* ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.componente {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ============================================ */
+/* MODAL PARA AMPLIAR IMÁGENES (opcional)       */
+/* ============================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    cursor: pointer;
+}
+
+.modal img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 50px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0px;
+}
+
+.nav-item {
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: -20px ;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+
+}
+
+h3{
+    color: #fff;
+}
+
+#nav{
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    margin-top: -20px;
+    width: 100%;
+}
