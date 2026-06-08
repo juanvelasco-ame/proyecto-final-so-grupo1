@@ -286,12 +286,14 @@ li {
 /* ============================================ */
 
 footer {
-    background: #2c3e50;
+
     color: white;
     text-align: center;
     padding: 25px;
     border-radius: 15px;
     margin-top: 40px;
+ background: rgba(1, 11, 54, 0.4);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 footer p {
