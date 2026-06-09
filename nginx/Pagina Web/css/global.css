@@ -47,3 +47,41 @@ nav {
     min-height: 100vh;
 }
 
+/* Media Queries para el NAVBAR */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1rem;
+    }
+    
+    .nav-list {
+        gap: 1rem;
+    }
+    
+    .nav-list li a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        padding: 0.7rem 0.5rem;
+    }
+    
+    .nav-list {
+        gap: 0.5rem;
+        flex-wrap: wrap; /* Permite que los links se envuelvan si es necesario */
+    }
+    
+    .nav-list li a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .nav-list li a {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}

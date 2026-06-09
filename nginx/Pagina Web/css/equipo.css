@@ -68,3 +68,251 @@ hr {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* ============================================ */
+/* MEDIA QUERIES - RESPONSIVE DESIGN            */
+/* ============================================ */
+
+/* Tablets (pantallas entre 768px y 1024px) */
+@media screen and (max-width: 1024px) {
+    .main-container {
+        max-width: 90%;
+        padding: 30px;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .integrante {
+        padding: 18px;
+    }
+    
+    .integrante h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Móviles grandes y tablets pequeñas (entre 600px y 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .main-container {
+        max-width: 95%;
+        padding: 25px;
+        border-radius: 12px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .integrante {
+        padding: 15px;
+        margin: 12px 0;
+    }
+    
+    .integrante h3 {
+        font-size: 1.1rem;
+    }
+    
+    .integrante p {
+        font-size: 0.95rem;
+        margin: 6px 0;
+    }
+    
+    .back-link {
+        font-size: 0.95rem;
+    }
+}
+
+/* Móviles pequeños (hasta 600px) */
+@media screen and (max-width: 600px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .main-container {
+        max-width: 100%;
+        padding: 20px 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .integrante {
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+    }
+    
+    .integrante h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .integrante p {
+        font-size: 0.85rem;
+        margin: 5px 0;
+        word-break: break-word; /* Para que los correos largos no se desborden */
+    }
+    
+    .back-link {
+        margin-top: 20px;
+        font-size: 0.9rem;
+    }
+    
+    hr {
+        margin: 15px 0;
+    }
+}
+
+/* Móviles muy pequeños (hasta 380px) */
+@media screen and (max-width: 380px) {
+    .main-container {
+        padding: 15px 10px;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .integrante {
+        padding: 10px;
+    }
+    
+    .integrante h3 {
+        font-size: 0.9rem;
+    }
+    
+    .integrante p {
+        font-size: 0.8rem;
+    }
+    
+    .back-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* Estilo claro para la página de equipo */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+}
+
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.integrante {
+    background: #ecf0f1;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.integrante:hover {
+    transform: translateX(5px);
+}
+
+.integrante h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.integrante p {
+    margin: 8px 0;
+    color: #34495e;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #2980b9;
+}
+
+hr {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+}
+
+/* ============================================ */
+/* MEDIA QUERIES - RESPONSIVE                   */
+/* ============================================ */
+
+@media screen and (max-width: 1024px) {
+    .main-container {
+        max-width: 90%;
+        padding: 30px;
+    }
+    h1 { font-size: 2rem; }
+    .integrante { padding: 18px; }
+}
+
+@media screen and (max-width: 768px) {
+    body { padding-top: 70px; }
+    .main-container {
+        max-width: 95%;
+        padding: 25px;
+        border-radius: 12px;
+    }
+    h1 { font-size: 1.8rem; }
+    .integrante { padding: 15px; margin: 12px 0; }
+    .integrante h3 { font-size: 1.1rem; }
+    .integrante p { font-size: 0.95rem; }
+}
+
+@media screen and (max-width: 600px) {
+    body { padding-top: 60px; }
+    .main-container {
+        max-width: 100%;
+        padding: 20px 15px;
+        border-radius: 10px;
+    }
+    h1 { font-size: 1.5rem; }
+    .integrante { padding: 12px; margin: 10px 0; border-radius: 8px; }
+    .integrante h3 { font-size: 1rem; }
+    .integrante p { font-size: 0.85rem; word-break: break-word; }
+    .back-link { margin-top: 20px; font-size: 0.9rem; }
+}
+
+@media screen and (max-width: 380px) {
+    .main-container { padding: 15px 10px; }
+    h1 { font-size: 1.3rem; }
+    .integrante { padding: 10px; }
+    .integrante h3 { font-size: 0.9rem; }
+    .integrante p { font-size: 0.8rem; }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    body { padding-top: 60px; }
+    .main-container { padding: 15px 20px; }
+    h1 { font-size: 1.3rem; margin-bottom: 15px; }
+    .integrante { padding: 8px 12px; margin: 8px 0; }
+}
