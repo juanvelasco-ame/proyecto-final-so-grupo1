@@ -201,7 +201,117 @@ docker compose down</code></pre>
                     <img src="Proyecto evidencias/docker/backend-5000.png" alt="Backend funcionando">
                     <p>Acceso a http://localhost:5000 desde el navegador - Mensaje del backend</p>
                 </div>
+                        <!-- ========================================== -->
+        <!-- COMPONENTE 3: KUBERNETES                   -->
+        <!-- ========================================== -->
+        <div class="componente">
+            <h3>☸️ Componente 3: Orquestación con Kubernetes</h3>
+            <p><strong>Valoración:</strong> 20% | <strong>Estado:</strong> ✅ Completado</p>
 
+            <h4>📋 Actividades realizadas</h4>
+            <ul>
+                <li>Instalación de Minikube en Ubuntu 24.04</li>
+                <li>Creación de manifiestos YAML: Deployment y Service</li>
+                <li>Despliegue de imagen oficial de Nginx con 2 réplicas</li>
+                <li>Exposición del servicio con tipo NodePort para acceso externo</li>
+                <li>Escalado manual a 3 réplicas</li>
+            </ul>
+
+            <h4>🔧 Comandos principales</h4>
+            <pre><code># Iniciar Minikube
+minikube start --driver=docker
+
+# Crear deployment con 2 réplicas
+kubectl apply -f nginx-deployment.yaml
+
+# Exponer servicio como NodePort
+kubectl apply -f nginx-service.yaml
+
+# Verificar pods y servicio
+kubectl get pods
+kubectl get svc
+
+# Escalar a 3 réplicas
+kubectl scale deployment nginx-deployment --replicas=3
+
+# Obtener URL de acceso
+minikube service nginx-service --url</code></pre>
+
+            <h4>📸 Evidencias de funcionamiento</h4>
+
+            <div class="captura">
+                <h4>Pods en ejecución (2 réplicas)</h4>
+                <img src="Proyecto evidencias/kubernet/pods iniciales.png" alt="Pods iniciales">
+                <p>Dos pods de Nginx en estado "Running" después del despliegue inicial.</p>
+            </div>
+
+            <div class="captura">
+                <h4>Servicio tipo NodePort</h4>
+                <img src="Proyecto evidencias/kubernet/nodePort.jpeg" alt="Service NodePort">
+                <p>Servicio expuesto como NodePort en el puerto 30600. Se puede acceder desde el navegador.</p>
+            </div>
+
+            <div class="captura">
+                <h4>Escalado a 3 réplicas</h4>
+                <img src="Proyecto evidencias/kubernet/replicas.png" alt="3 réplicas">
+                <p>Ejecutamos <code>kubectl scale --replicas=3</code> y verificamos que ahora hay 3 pods en estado Running. El tercer pod tiene menos tiempo de vida (17s), confirmando que se creó después del escalado.</p>
+            </div>
+
+            <div class="captura">
+                <h4>Acceso desde el navegador</h4>
+                <img src="Proyecto evidencias/kubernet/Nginx.jpeg" alt="Nginx en navegador">
+                <p>Accedemos a <code>http://192.168.49.2:30600</code> y vemos la página de bienvenida de Nginx, confirmando que el servicio está funcionando correctamente.</p>
+            </div>
+
+            <h4>📊 Resumen de la configuración</h4>
+            <table>
+                <thead>
+                    <tr><th>Recurso</th><th>Nombre</th><th>Detalle</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Deployment</td><td>nginx-deployment</td><td>3 réplicas de Nginx</td></tr>
+                    <tr><td>Service</td><td>nginx-service</td><td>Tipo NodePort, puerto 30600</td></tr>
+                    <tr><td>URL de acceso</td><td colspan="2">http://192.168.49.2:30600</td></tr>
+                </tbody>
+            </table>
+
+            <h4>📝 Manifiestos YAML utilizados</h4>
+
+            <h5>nginx-deployment.yaml</h5>
+            <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80</code></pre>
+
+            <h5>nginx-service.yaml</h5>
+            <pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: NodePort
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30600</code></pre>
+        </div>
                 <h4>📊 Resumen de servicios Docker</h4>
                 <table>
                     <thead>
